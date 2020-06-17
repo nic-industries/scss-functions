@@ -2,7 +2,7 @@
   "name": "@nic-industries/scss-functions",
   "version": "1.0.0",
   "description": "A collection of SCSS functions",
-  "repository": "https://github.com/nic-industries/scss-functions",
+  "repository": "git://github.com/nic-industries/scss-functions.git",
   "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "keywords": ["sass", "scss", "css", "functions"],
   "author": {
