@@ -1,0 +1,13 @@
+{
+  "name": "@nic-industries/scss-functions",
+  "version": "1.0.0",
+  "description": "A collection of SCSS functions",
+  "repository": "https://github.com/nic-industries/scss-functions",
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "keywords": ["sass", "scss", "css", "functions"],
+  "author": {
+    "name": "Sebastian Inman",
+    "email": "sebastian@nicindustries.com"
+  },
+  "license": "ISC"
+}
