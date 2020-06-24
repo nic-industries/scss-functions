@@ -3,6 +3,32 @@
 // Style guide: Functions.Color
 
 
+@function Color($color) {
+
+  @return map-get($Colors, $color);
+
+}
+
+
+@function Color\Shades($color) {
+
+  $shades: ();
+
+  @each $shade, $percent in (10: 20, 20: 15, 30: 10, 40: 5) {
+    $shades: map-merge($shades, ($shade: Color\Lighten($color, $percent)));
+  }
+
+  $shades: map-merge($shades, (50: $color));
+
+  @each $shade, $percent in (60: 5, 70: 10, 80: 15, 90: 20) {
+    $shades: map-merge($shades, ($shade: Color\Darken($color, $percent)));
+  }
+
+  @return $shades;
+
+}
+
+
 
 // Color\RGB
 //
@@ -66,7 +92,7 @@
 
 
 
-// Color\Tint
+// Color\Lighten
 //
 // Applies a white tint to the provided color.
 //
@@ -78,7 +104,7 @@
 //
 // Style guide: Functions.Color.Tint
 
-@function Color\Tint($color, $amount) {
+@function Color\Lighten($color, $amount) {
 
   @if $amount > 100 or $amount < 0 {
 
@@ -92,7 +118,7 @@
 
 
 
-// Color\Shade
+// Color\Darken
 //
 // Applies a black shade to the provided color.
 //
@@ -104,7 +130,7 @@
 //
 // Style guide: Functions.Color.Shade
 
-@function Color\Shade($color, $amount) {
+@function Color\Darken($color, $amount) {
 
   @if $amount > 100 or $amount < 0 {
 
