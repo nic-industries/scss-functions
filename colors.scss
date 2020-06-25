@@ -10,17 +10,15 @@
 }
 
 
-@function Color\Shades($color) {
+@function Color\Shades($color, $shades: ()) {
 
-  $shades: ();
-
-  @each $shade, $percent in (10: 20, 20: 15, 30: 10, 40: 5) {
+  @each $shade, $percent in (100: 20, 200: 15, 300: 10, 400: 5) {
     $shades: map-merge($shades, ($shade: Color\Lighten($color, $percent)));
   }
 
-  $shades: map-merge($shades, (50: $color));
+  $shades: map-merge($shades, (500: $color));
 
-  @each $shade, $percent in (60: 5, 70: 10, 80: 15, 90: 20) {
+  @each $shade, $percent in (600: 5, 700: 10, 800: 15, 900: 20) {
     $shades: map-merge($shades, ($shade: Color\Darken($color, $percent)));
   }
 
